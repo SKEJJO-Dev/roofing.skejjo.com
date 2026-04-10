@@ -235,9 +235,10 @@
 
     <div class="projects-grid">
       {{ range $projects }}
+      {{ $p := . }}
       <article class="project-card">
-        {{ with .Params.image }}
-        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" width="400" height="300">
+        {{ with $p.Params.image }}
+        <img src="{{ . }}" alt="{{ $p.Title }}" loading="lazy" width="400" height="300">
         {{ else }}
         <img src="/images/project-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="300">
         {{ end }}
@@ -320,10 +321,11 @@
 
     <div class="blog-grid">
       {{ range $posts }}
+      {{ $post := . }}
       <article class="blog-card">
         <div class="blog-card-image">
-          {{ with .Params.image }}
-          <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" width="400" height="225">
+          {{ with $post.Params.image }}
+          <img src="{{ . }}" alt="{{ $post.Title }}" loading="lazy" width="400" height="225">
           {{ else }}
           <img src="/images/blog-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="225">
           {{ end }}

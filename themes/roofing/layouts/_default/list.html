@@ -27,10 +27,11 @@
     {{ else if eq .Section "blog" }}
     <div class="blog-grid">
       {{ range .Pages }}
+      {{ $item := . }}
       <article class="blog-card">
         <div class="blog-card-image">
-          {{ with .Params.image }}
-          <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" width="400" height="225">
+          {{ with $item.Params.image }}
+          <img src="{{ . }}" alt="{{ $item.Title }}" loading="lazy" width="400" height="225">
           {{ else }}
           <img src="/images/blog-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="225">
           {{ end }}
@@ -50,9 +51,10 @@
     {{ else if eq .Section "projects" }}
     <div class="projects-grid">
       {{ range .Pages }}
+      {{ $item := . }}
       <article class="project-card">
-        {{ with .Params.image }}
-        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" width="400" height="300">
+        {{ with $item.Params.image }}
+        <img src="{{ . }}" alt="{{ $item.Title }}" loading="lazy" width="400" height="300">
         {{ else }}
         <img src="/images/project-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="300">
         {{ end }}
