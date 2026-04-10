@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+  {{- if .IsHome -}}
+    {{ .Site.Title }} | Professional Roofing Services
+  {{- else -}}
+    {{ .Title }} | {{ .Site.Title }}
+  {{- end -}}
+</title>
+
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+{{- if .IsHome }}
+<link rel="canonical" href="{{ .Site.BaseURL }}">
+{{- else }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- end }}
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+{{- with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{- end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="alternate icon" href="/images/favicon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Pagefind search CSS -->
+{{- if .Site.Params.enableSearch }}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+{{- end }}
