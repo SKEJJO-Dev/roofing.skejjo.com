@@ -1,0 +1,31 @@
+# Hugo build output
+/public/
+
+# Hugo resources cache
+/resources/_gen/
+
+# Hugo build lock
+.hugo_build.lock
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+
+# Netlify cache
+.netlify/
+
+# Build stats
+hugo_stats.json

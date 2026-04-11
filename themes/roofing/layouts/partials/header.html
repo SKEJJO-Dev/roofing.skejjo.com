@@ -1,0 +1,53 @@
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="{{ "/" | relURL }}" class="site-logo" aria-label="{{ .Site.Title }} Home">
+        <div class="site-logo-text"><span>SKEJJO</span> Roofing</div>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="nav-menu" role="list">
+          {{- range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL | relURL }}" class="nav-link{{ if or (eq $.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $.RelPermalink .URL)) }} active{{ end }}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{- end }}
+        </ul>
+
+        <div class="nav-cta">
+          <a href="tel:{{ .Site.Params.phone | urlize }}" class="nav-phone" aria-label="Call us">
+            📞 {{ .Site.Params.phone }}
+          </a>
+          <a href="/contact" class="btn btn-primary">Free Estimate</a>
+        </div>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+  <ul class="mobile-nav-menu" role="list">
+    {{- range .Site.Menus.main }}
+    <li>
+      <a href="{{ .URL | relURL }}" class="mobile-nav-link">{{ .Name }}</a>
+    </li>
+    {{- end }}
+  </ul>
+  <div style="margin-top: 2rem;">
+    <a href="tel:{{ .Site.Params.phone | urlize }}" class="btn btn-outline" style="width:100%; justify-content:center; margin-bottom:1rem;">
+      📞 {{ .Site.Params.phone }}
+    </a>
+    <a href="/contact" class="btn btn-primary" style="width:100%; justify-content:center;">
+      Get Free Estimate
+    </a>
+  </div>
+</nav>

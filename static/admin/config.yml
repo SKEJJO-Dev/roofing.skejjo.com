@@ -1,0 +1,212 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files storage
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+# Enable editorial workflow (draft/review/ready)
+publish_mode: editorial_workflow
+
+# Site URL for the CMS editor
+site_url: "https://roofing.skejjo.com"
+display_url: "https://roofing.skejjo.com"
+logo_url: "https://roofing.skejjo.com/images/logo.svg"
+
+# Locale
+locale: "en"
+
+collections:
+  # Blog Posts
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}"
+    filter:
+      field: "_index"
+      value: false
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: true
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        required: true
+        hint: "Brief description for SEO and previews (150-160 characters recommended)"
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        media_folder: "/static/images/blog"
+        public_folder: "/images/blog"
+      - label: "Categories"
+        name: "categories"
+        widget: "list"
+        required: false
+        default: ["Roofing Tips"]
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true
+
+  # Services
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "services/{{slug}}"
+    filter:
+      field: "_index"
+      value: false
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        required: true
+      - label: "Icon (Emoji)"
+        name: "icon"
+        widget: "string"
+        required: false
+        default: "🏠"
+        hint: "Emoji icon for this service"
+      - label: "Sort Order"
+        name: "weight"
+        widget: "number"
+        required: false
+        default: 10
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        media_folder: "/static/images/services"
+        public_folder: "/images/services"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true
+
+  # Projects
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "projects/{{slug}}"
+    filter:
+      field: "_index"
+      value: false
+    fields:
+      - label: "Project Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Completion Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: true
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        required: true
+      - label: "Location"
+        name: "location"
+        widget: "string"
+        required: false
+        hint: "City, State"
+      - label: "Type of Work"
+        name: "type_of_work"
+        widget: "string"
+        required: false
+      - label: "Materials Used"
+        name: "materials"
+        widget: "string"
+        required: false
+      - label: "Project Image"
+        name: "image"
+        widget: "image"
+        required: false
+        media_folder: "/static/images/projects"
+        public_folder: "/images/projects"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+  # Pages (static content)
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    files:
+      - label: "About Us"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+
+      - label: "Privacy Policy"
+        name: "privacy"
+        file: "content/privacy.md"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+
+      - label: "Terms of Service"
+        name: "terms"
+        file: "content/terms.md"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"

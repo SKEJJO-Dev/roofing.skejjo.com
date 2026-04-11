@@ -1,0 +1,83 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    {{ if eq .Section "services" }}
+    <div class="services-grid">
+      {{ range .Pages }}
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">{{ .Params.icon | default "🏠" }}</div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description | default .Summary }}</p>
+        <a href="{{ .RelPermalink }}" class="service-link">Learn more →</a>
+      </article>
+      {{ end }}
+    </div>
+    {{ else if eq .Section "blog" }}
+    <div class="blog-grid">
+      {{ range .Pages }}
+      {{ $item := . }}
+      <article class="blog-card">
+        <div class="blog-card-image">
+          {{ with $item.Params.image }}
+          <img src="{{ . }}" alt="{{ $item.Title }}" loading="lazy" width="400" height="225">
+          {{ else }}
+          <img src="/images/blog-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="225">
+          {{ end }}
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-category">{{ with .Params.categories }}{{ index . 0 }}{{ else }}Roofing Tips{{ end }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Summary | truncate 140 }}</p>
+          <a href="{{ .RelPermalink }}" class="read-more">Read more →</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ else if eq .Section "projects" }}
+    <div class="projects-grid">
+      {{ range .Pages }}
+      {{ $item := . }}
+      <article class="project-card">
+        {{ with $item.Params.image }}
+        <img src="{{ . }}" alt="{{ $item.Title }}" loading="lazy" width="400" height="300">
+        {{ else }}
+        <img src="/images/project-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="300">
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="project-overlay">
+          <div class="project-info">
+            <h4>{{ .Title }}</h4>
+            <p>{{ .Params.location | default "Local Project" }}</p>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+    <div class="content-wrapper">
+      {{ .Content }}
+      {{ range .Pages }}
+      <article>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary }}</p>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
