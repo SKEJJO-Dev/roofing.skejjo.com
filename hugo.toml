@@ -1,0 +1,81 @@
+baseURL = "https://roofing.skejjo.com"
+languageCode = "en-us"
+title = "SKEJJO Roofing"
+theme = "roofing"
+
+[params]
+  description = "Professional roofing services you can trust. Quality craftsmanship, competitive pricing, and expert installation."
+  author = "SKEJJO Roofing"
+  phone = "(555) 123-4567"
+  email = "info@roofing.skejjo.com"
+  address = "123 Main Street, Anytown, USA"
+  logo = "/images/logo.svg"
+  heroImage = "/images/hero-bg.jpg"
+  enableSearch = true
+  enableCMS = true
+  googleMapsKey = ""
+
+  [params.social]
+    facebook = "https://facebook.com/skejjoroofing"
+    instagram = "https://instagram.com/skejjoroofing"
+    twitter = "https://twitter.com/skejjoroofing"
+
+  [params.cta]
+    title = "Ready for a New Roof?"
+    subtitle = "Get a free estimate today. No obligation, no pressure."
+    buttonText = "Get Free Estimate"
+    buttonLink = "/contact"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Services"
+    url = "/services"
+    weight = 2
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects"
+    weight = 3
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog"
+    weight = 4
+
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 5
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 6
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = "monokai"
+
+[build]
+  writeStats = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"

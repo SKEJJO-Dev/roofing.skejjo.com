@@ -1,0 +1,364 @@
+{{ define "body-class" }}page-home{{ end }}
+
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        ✓ Licensed &amp; Insured · 20+ Years Experience
+      </div>
+      <h1>{{ .Site.Title }}<br><span style="color: var(--color-accent);">Roof Right.</span></h1>
+      <p>{{ .Site.Params.description }}</p>
+      <div class="hero-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Get Free Estimate</a>
+        <a href="/services" class="btn btn-secondary btn-lg">Our Services</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats" aria-label="Company statistics">
+    <div class="hero-stat">
+      <div class="hero-stat-number">500+</div>
+      <div class="hero-stat-label">Projects Completed</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number">20+</div>
+      <div class="hero-stat-label">Years Experience</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number">100%</div>
+      <div class="hero-stat-label">Satisfaction Rate</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number">5★</div>
+      <div class="hero-stat-label">Average Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar" aria-label="Trust indicators">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        Licensed &amp; Insured
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🏆</span>
+        Award-Winning Service
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🔒</span>
+        Lifetime Warranty Available
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">⚡</span>
+        Fast Emergency Repairs
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">💰</span>
+        Free Estimates
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services Section -->
+<section id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title" id="services-heading">Roofing Services Built to Last</h2>
+      <p class="section-subtitle">From new installations to emergency repairs, we handle every roofing challenge with expertise and care.</p>
+    </div>
+
+    <div class="services-grid">
+      {{ range first 6 (where .Site.RegularPages "Section" "services") }}
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">{{ .Params.icon | default "🏠" }}</div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description | default .Summary }}</p>
+        <a href="{{ .RelPermalink }}" class="service-link">
+          Learn more →
+        </a>
+      </article>
+      {{ else }}
+      <!-- Default services if no content pages exist yet -->
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">🏠</div>
+        <h3>Residential Roofing</h3>
+        <p>Complete residential roofing solutions including new installations, replacements, and repairs for all home styles.</p>
+        <a href="/services/residential-roofing" class="service-link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">🏢</div>
+        <h3>Commercial Roofing</h3>
+        <p>Durable commercial roofing systems for businesses, including flat roofs, metal roofing, and TPO membranes.</p>
+        <a href="/services/commercial-roofing" class="service-link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">🔧</div>
+        <h3>Roof Repair</h3>
+        <p>Fast and reliable roof repair services to fix leaks, missing shingles, storm damage, and more.</p>
+        <a href="/services/roof-repair" class="service-link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">🔍</div>
+        <h3>Roof Inspection</h3>
+        <p>Thorough roof inspections to identify issues before they become costly problems. Ideal for home buyers.</p>
+        <a href="/services/roof-inspection" class="service-link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">🌧️</div>
+        <h3>Gutters &amp; Drainage</h3>
+        <p>Gutter installation, cleaning, and repair to protect your home from water damage and foundation issues.</p>
+        <a href="/services/gutters" class="service-link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">⚡</div>
+        <h3>Emergency Services</h3>
+        <p>24/7 emergency roofing services for storm damage, sudden leaks, and other urgent roofing needs.</p>
+        <a href="/services/emergency" class="service-link">Learn more →</a>
+      </article>
+      {{ end }}
+    </div>
+
+    <div class="text-center" style="margin-top: 3rem;">
+      <a href="/services" class="btn btn-outline btn-lg">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-us" aria-labelledby="why-us-heading">
+  <div class="container">
+    <div class="why-us-grid">
+      <div class="why-us-image">
+        <img src="/images/team.jpg" alt="SKEJJO Roofing team at work" width="600" height="500" loading="lazy">
+        <div class="why-us-badge">
+          <div class="why-us-badge-number">20+</div>
+          <div class="why-us-badge-text">Years of Excellence</div>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-label">Why Choose Us</span>
+        <h2 id="why-us-heading">The SKEJJO Roofing Difference</h2>
+        <p style="color: var(--color-text-light); margin-bottom: 2rem;">We're not just roofing contractors — we're your neighbors, committed to protecting your home with the best materials and workmanship available.</p>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">✓</div>
+            <div class="feature-content">
+              <h4>Licensed &amp; Fully Insured</h4>
+              <p>Complete peace of mind with all required licenses and comprehensive liability insurance coverage.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">🏆</div>
+            <div class="feature-content">
+              <h4>Premium Materials Only</h4>
+              <p>We partner with top manufacturers like GAF, Owens Corning, and CertainTeed for lasting quality.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">💰</div>
+            <div class="feature-content">
+              <h4>Transparent Pricing</h4>
+              <p>No hidden fees, no surprises. We provide detailed written estimates before any work begins.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">🔒</div>
+            <div class="feature-content">
+              <h4>Workmanship Warranty</h4>
+              <p>Every project comes with our workmanship warranty, backed by manufacturer warranties too.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <a href="/about" class="btn btn-primary">Learn About Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title" id="process-heading">Simple, Stress-Free Process</h2>
+      <p class="section-subtitle">Getting a new roof shouldn't be complicated. Here's how we make it easy.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number" aria-hidden="true">1</div>
+        <h3>Free Inspection</h3>
+        <p>We assess your roof thoroughly and provide an honest evaluation of its condition.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number" aria-hidden="true">2</div>
+        <h3>Detailed Estimate</h3>
+        <p>Receive a clear, itemized estimate with no hidden costs or surprises.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number" aria-hidden="true">3</div>
+        <h3>Professional Install</h3>
+        <p>Our certified crew completes the work efficiently, keeping your property clean.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number" aria-hidden="true">4</div>
+        <h3>Final Walkthrough</h3>
+        <p>We review the completed project together to ensure your total satisfaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+{{ $projects := first 6 (where .Site.RegularPages "Section" "projects") }}
+{{ if $projects }}
+<section class="bg-light" aria-labelledby="projects-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title" id="projects-heading">Recent Projects</h2>
+      <p class="section-subtitle">Browse our portfolio of completed roofing projects throughout the area.</p>
+    </div>
+
+    <div class="projects-grid">
+      {{ range $projects }}
+      {{ $p := . }}
+      <article class="project-card">
+        {{ with $p.Params.image }}
+        <img src="{{ . }}" alt="{{ $p.Title }}" loading="lazy" width="400" height="300">
+        {{ else }}
+        <img src="/images/project-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="300">
+        {{ end }}
+        <div class="project-overlay">
+          <div class="project-info">
+            <h4>{{ .Title }}</h4>
+            <p>{{ .Params.location | default "Local Project" }}</p>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    <div class="text-center" style="margin-top: 3rem;">
+      <a href="/projects" class="btn btn-outline btn-lg">View All Projects</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Testimonials -->
+<section class="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" style="color: rgba(255,255,255,0.6);">What Customers Say</span>
+      <h2 class="section-title" id="testimonials-heading">Trusted by Homeowners</h2>
+      <p class="section-subtitle">Don't just take our word for it — hear what our customers have to say.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"SKEJJO Roofing replaced our entire roof after storm damage. The crew was professional, fast, and left our property spotless. Highly recommend!"</p>
+        <footer class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">JM</div>
+          <div>
+            <div class="testimonial-name">John & Maria Davis</div>
+            <div class="testimonial-location">Homeowners, Springfield</div>
+          </div>
+        </footer>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"I got three quotes and SKEJJO was the most transparent and reasonably priced. The quality of work exceeded my expectations. My roof looks amazing!"</p>
+        <footer class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">ST</div>
+          <div>
+            <div class="testimonial-name">Sarah Thompson</div>
+            <div class="testimonial-location">Homeowner, Riverside</div>
+          </div>
+        </footer>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+        <p class="testimonial-text">"Called them for an emergency leak and they were there within hours. Fixed the problem quickly and professionally. Will definitely use them again."</p>
+        <footer class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">RK</div>
+          <div>
+            <div class="testimonial-name">Robert Kim</div>
+            <div class="testimonial-location">Business Owner, Downtown</div>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+{{ $posts := first 3 (where .Site.RegularPages "Section" "blog") }}
+{{ if $posts }}
+<section aria-labelledby="blog-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Roofing Tips</span>
+      <h2 class="section-title" id="blog-heading">Latest from Our Blog</h2>
+      <p class="section-subtitle">Expert advice, tips, and insights to help you care for your roof.</p>
+    </div>
+
+    <div class="blog-grid">
+      {{ range $posts }}
+      {{ $post := . }}
+      <article class="blog-card">
+        <div class="blog-card-image">
+          {{ with $post.Params.image }}
+          <img src="{{ . }}" alt="{{ $post.Title }}" loading="lazy" width="400" height="225">
+          {{ else }}
+          <img src="/images/blog-placeholder.jpg" alt="{{ .Title }}" loading="lazy" width="400" height="225">
+          {{ end }}
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-category">{{ with .Params.categories }}{{ index . 0 }}{{ else }}Roofing Tips{{ end }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Summary | truncate 120 }}</p>
+          <a href="{{ .RelPermalink }}" class="read-more">Read more →</a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    <div class="text-center" style="margin-top: 3rem;">
+      <a href="/blog" class="btn btn-outline btn-lg">View All Posts</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- CTA Section -->
+<section class="cta-section" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">{{ .Site.Params.cta.title }}</h2>
+    <p>{{ .Site.Params.cta.subtitle }}</p>
+    <div class="cta-actions">
+      <a href="{{ .Site.Params.cta.buttonLink }}" class="btn btn-secondary btn-lg">{{ .Site.Params.cta.buttonText }}</a>
+      <a href="tel:{{ .Site.Params.phone | urlize }}" class="btn btn-secondary btn-lg">📞 {{ .Site.Params.phone }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

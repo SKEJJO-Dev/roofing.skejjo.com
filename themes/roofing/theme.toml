@@ -1,0 +1,12 @@
+name = "Roofing"
+license = "MIT"
+licenselink = "https://github.com/SKEJJO-Dev/roofing.skejjo.com/blob/main/LICENSE"
+description = "A professional roofing company theme for Hugo"
+homepage = "https://roofing.skejjo.com"
+tags = ["roofing", "business", "responsive", "pagefind", "decap-cms"]
+features = ["responsive", "search", "cms"]
+min_version = "0.120.0"
+
+[author]
+  name = "SKEJJO Dev"
+  homepage = "https://skejjo.com"
