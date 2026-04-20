@@ -1,0 +1,22 @@
+[build]
+  publish = "public"
+  command = "hugo"
+
+[dev]
+  command = "hugo server -D"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+
+# Serve Decap CMS admin shell for deep links under /admin.
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache"
