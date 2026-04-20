@@ -1,28 +1,28 @@
 ---
-title: "We provide our best <br> cleaning **services**"
+title: "We provide our best <br> roofing **services**"
 homepage_section_enable: false
-home_title: "We provide our best <br> **cleaning** services for you"
+home_title: "We provide our best <br> **roofing** services for you"
 meta_title: "Services"
 description: "this is service page"
 subtitle: "HIGHEST LEVEL OF SERVICE"
 descriptions:
-  - "Our company provides a wide range of cleaning services, from home cleaning to office cleaning. We use only advanced technologies to keep your room looking the best."
-  - "Our team of experts who have been in the profession for years focuses on helping you achieve optimal clean surface."
+  - "Our company provides a full range of roofing services, from leak repair and maintenance to complete roof replacement for homes and businesses."
+  - "Our experienced crew delivers durable results using quality materials, proper ventilation planning, and code-compliant installation methods."
 
 process:
   title: "The process we have been doing <br> for **over 25 years** of service"
-  content: "Our clinic provides a wide range of oral care services, from checkups to fitting braces. We use only advanced technologies to keep your smile looking the best. Our clinic provides a wide range of oral care services,"
+  content: "Our roofing process is built around clear communication, safety, and quality control from inspection through final walkthrough."
   processes:
-    - name: "Hygiene & Clean"
+    - name: "Roof Inspection"
       icon: "fa-solid fa-bottle-droplet" #icon is from https://fontawesome.com/
-      content: "Our clinic provides a wide range of oral care services, from checkups to fitting braces. we are ready."
-    - name: "Safety Check"
+      content: "We assess shingles, flashing, decking, gutters, and ventilation to identify issues and prioritize repairs."
+    - name: "Scope & Estimate"
       icon: "fa-regular fa-heart" #icon is from https://fontawesome.com/
-      content: "Our clinic provides a wide range of oral care services, from checkups to fitting braces. we are ready."
-    - name: "Deep Cleaning"
+      content: "You receive a detailed proposal with materials, timeline, and transparent pricing before work begins."
+    - name: "Installation & Repair"
       icon: "fa-solid fa-broom" #icon is from https://fontawesome.com/
-      content: "Our clinic provides a wide range of oral care services, from checkups to fitting braces. we are ready."
-    - name: "Health Inspection"
+      content: "Our certified team completes repairs or replacement with strict quality and safety standards."
+    - name: "Final Quality Check"
       icon: "fa-solid fa-notes-medical" #icon is from https://fontawesome.com/
-      content: "Our clinic provides a wide range of oral care services, from checkups to fitting braces. we are ready."
+      content: "We perform a final walkthrough, cleanup, and warranty handoff so you know exactly what was completed."
 ---

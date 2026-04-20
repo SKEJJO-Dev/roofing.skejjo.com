@@ -1,7 +1,7 @@
 ---
-title: "Schedule an <br> **appointment**"
+title: "Schedule a <br> **roof inspection**"
 subtitle: "BOOK A SERVICE"
-meta_title: "Schedule an Appointment"
+meta_title: "Schedule a Roof Inspection"
 description: "this is meta description"
 contact_way:
   - name: "Phone Number"

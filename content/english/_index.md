@@ -1,7 +1,7 @@
 ---
 hero:
-  title: "Professional **Cleaning** <br> Services in Auburn."
-  subtitle: "AWARD WINNING CLEANING SERVICE COMPANY"
+  title: "Professional **Roofing** <br> Services in Auburn."
+  subtitle: "TRUSTED RESIDENTIAL & COMMERCIAL ROOFING COMPANY"
   buttons:
     - enable: true
       label: "Call: +1-394-495-5993"
@@ -21,9 +21,9 @@ hero:
 
 about:
   enable: true
-  title: "Your **comfort** is our main priority"
+  title: "Your **roof protection** is our top priority"
   subtitle: "WHO ARE WE"
-  content: "We appreciate your trust greatly. Our patients choose our clinic because they know we are the best in the field."
+  content: "Homeowners and property managers choose SKEJJO Roofing for dependable workmanship, clear communication, and durable roofing systems built for long-term performance."
   schedule:
     - day: MON-FRI
       time: 9 AM – 22 PM
@@ -40,18 +40,18 @@ about:
 
 responsibility:
   enable: true
-  title: "**Best cleaning** <br> company in the town"
+  title: "**Reliable roofing** <br> experts in your area"
   subtitle: "WHAT WE DO"
-  content: "Our professional dental clinic offers the whole range of <br> dentistry services: treatment of caries, gum diseases, <br> tooth whitening, implantation, dentures, h whitening, <br> implantation, dentures surgery, etc."
+  content: "From emergency leak repairs to full roof replacements, <br> we deliver end-to-end roofing services with premium materials, <br> certified installers, and quality checks at every stage <br> so your home stays protected year-round."
   image: "images/home/responsibility/1.png"
   video:
     thumbnail: "images/home/responsibility/thumb.webp"
     url: "https://www.youtube.com/embed/dyZcRRWiuuw?autoplay=1&mute=0"
   job:
-    - title: "Service and guarantees"
-      content: "We will provide you with the best possible care in an atmosphere of comfort and compassion."
-    - title: "Team of professionals"
-      content: "We will eliminate the chance of multiple visits by delivering the premium quality service."
+    - title: "Workmanship warranty"
+      content: "Every project is completed to code and backed by clear workmanship guarantees."
+    - title: "Certified roofing crew"
+      content: "Our trained team handles inspections, repairs, and replacements with consistent quality."
 
 customer:
   enable: true
@@ -70,15 +70,15 @@ testimonial:
     - name: "Jack Morrison"
       about: "36 y, New York"
       image: "images/home/review/1.png"
-      says: "Cleaner is the best service i have ever get provides a wide range of cleaning services, from home cleaning to office cleaning. They used advanced technologies to keep our room looking the best. <br> <br> Their team of experts who have been in the profession for years focuses on helped us achieve optimal clean surface."
+      says: "SKEJJO Roofing fixed a persistent leak around our chimney and replaced damaged shingles the same week. Their team was punctual, transparent, and left the property spotless. <br> <br> The roof now looks excellent and performs perfectly in heavy rain."
     - name: "Jack Morrison"
       about: "36 y, New York"
       image: "images/home/review/2.png"
-      says: "Cleaner is the best service i have ever get provides a wide range of cleaning services, from home cleaning to office cleaning. They used advanced technologies to keep our room looking the best. <br> <br> Their team of experts who have been in the profession for years focuses on helped us achieve optimal clean surface."
+      says: "We hired SKEJJO Roofing for a full replacement on our rental property. They provided a clear estimate, met the timeline, and documented every phase with photos. <br> <br> The finished roof boosted curb appeal and gave us confidence before winter."
     - name: "Jack Morrison"
       about: "36 y, New York"
       image: "images/home/review/1.png"
-      says: "Cleaner is the best service i have ever get provides a wide range of cleaning services, from home cleaning to office cleaning. They used advanced technologies to keep our room looking the best. <br> <br> Their team of experts who have been in the profession for years focuses on helped us achieve optimal clean surface."
+      says: "After storm damage, SKEJJO Roofing handled both emergency tarping and permanent repairs quickly. Their communication with our insurance adjuster made the process easy. <br> <br> We highly recommend them for professional roofing work."
 
 blog:
   enable: true

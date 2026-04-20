@@ -10,7 +10,7 @@ logo_height = "36px"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
-logo_text = "cleaner"
+logo_text = "SKEJJO Roofing"
 # theme-mode
 theme_switcher = false
 theme_default = "system" # available options [light/dark/system]
@@ -28,12 +28,12 @@ copyright = "[Gethugothemes](https://gethugothemes.com/) © 2025 All Rights Rese
 # footer logo
 footer_logo = "images/logo.svg"
 # footer description
-footer_description = "Professional cleaning services using innovative technology."
+footer_description = "Professional roofing services with reliable workmanship and long-term protection."
 
 # Notification banner
 [notification]
 enable = true
-message = "Need quick cleaning help?"
+message = "Need quick roofing help?"
 link = "tel:+1-394-495-5993"
 label = "Call Us: +1 071 281 9795"
 icon = "fa-phone"
@@ -71,10 +71,10 @@ content = "You must replace the **baseURL** in **hugo.toml** file when deploying
 # seo meta data for OpenGraph / Twitter Card
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
-keywords = ["Service", "Hugo"]
-description = "Hugo and Tailwindcss Service theme"
-author = "gethugothemes"
-twitter = "gethugothemes"
+keywords = ["Roofing", "Roof Repair", "Roof Replacement", "Gutters", "Storm Damage"]
+description = "SKEJJO Roofing provides roof inspections, repairs, replacements, and gutter services."
+author = "SKEJJO Roofing"
+twitter = "skejjoroofing"
 image = "images/og-image.png"
 
 
