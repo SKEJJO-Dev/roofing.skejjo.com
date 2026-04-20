@@ -1,12 +1,12 @@
 ---
-title: "We are a cleaning service <br> company with **expert team**"
-meta_title: "We are a cleaning service company with expert team"
+title: "We are a roofing company <br> with an **expert team**"
+meta_title: "We are a roofing company with an expert team"
 description: "this is about page"
 subtitle: "ABOUT US"
 
 why_us:
   - title: "You can depend on us <br> to get a **good services**"
-    content: "Our clinic provides a wide range of oral care services checkup to fitting braces. We use only advanced technologies to keep your smile looking the best."
+    content: "We provide complete roofing services, from inspections and minor repairs to full roof replacements. Our team uses proven systems and premium materials to deliver long-lasting results."
     button:
       enable: true
       label: "Call: +1-394-495-5993"
@@ -28,7 +28,7 @@ why_us:
 pride:
   title: "We are **recognized** award <br> winning company"
   subtitle: "OUR PRIDE"
-  content: "Our clinic provides a wide range of oral care services, from checkups to fitting braces. We use only advanced technologies to keep your smile looking the best."
+  content: "SKEJJO Roofing is known for quality craftsmanship, dependable timelines, and safety-first project management on every residential and commercial roofing job."
   images:
     - "images/about/3.png"
     - "images/about/4.png"
@@ -40,15 +40,15 @@ team:
   subtitle: "OUR AWESOME TEAM"
   members:
     - name: "Brandon Copperfield"
-      designation: "Cleaning Manager"
+      designation: "Roofing Project Manager"
       image: "images/about/member/1.png"
     - name: "Jim Sochon"
-      designation: "Head in Plumbing"
+      designation: "Lead Roofing Technician"
       image: "images/about/member/3.png"
     - name: "Ashley Hardy"
-      designation: "Cleaning Staff"
+      designation: "Shingle & Flashing Specialist"
       image: "images/about/member/2.png"
     - name: "Barry Allen"
-      designation: "Cleaning Staff"
+      designation: "Roof Safety Coordinator"
       image: "images/about/member/4.png"
 ---

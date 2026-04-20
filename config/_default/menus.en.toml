@@ -12,16 +12,6 @@ url = "services/"
 weight = 2
 
 [[main]]
-name = "Gallery"
-url = "gallery/"
-weight = 3
-
-[[main]]
-name = "Blog"
-url = "blog/"
-weight = 4
-
-[[main]]
 name = "Contact"
 url = "contact/"
 weight = 5
@@ -60,6 +50,16 @@ name = "Contacts"
 url = "contact/"
 weight = 5
 
+[[footer_01]]
+name = "Gallery"
+url = "gallery/"
+weight = 6
+
+[[footer_01]]
+name = "Blog"
+url = "blog/"
+weight = 7
+
 # Services section
 [[footer_02]]
 name = "Services" # This acts as the section title
@@ -67,21 +67,21 @@ title = true      # Flag to identify this as a section title
 weight = 0        # Lower weight to appear first
 
 [[footer_02]]
-name = "Home Cleaning"
-url = "services/home-cleaning/"
+name = "Residential Roof Replacement"
+url = "services/residential-roof-replacement/"
 weight = 1
 
 [[footer_02]]
-name = "Window Cleaning"
-url = "services/window-cleaning/"
+name = "Roof Repair & Leak Detection"
+url = "services/roof-repair-leak-detection/"
 weight = 2
 
 [[footer_02]]
-name = "Pest Control"
-url = "services/pest-control/"
+name = "Gutter Installation & Protection"
+url = "services/gutter-installation-protection/"
 weight = 3
 
 [[footer_02]]
-name = "Floor Cleaning"
-url = "services/floor-cleaning/"
+name = "Storm Damage Roof Restoration"
+url = "services/storm-damage-roof-restoration/"
 weight = 4

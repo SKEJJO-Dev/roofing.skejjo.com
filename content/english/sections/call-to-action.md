@@ -1,8 +1,8 @@
 ---
 enable: true
-title: "Discuss our services or <br> make an **appointment**"
+title: "Discuss your roofing needs <br> or book an **inspection**"
 subtitle: "CONTACT US"
-content: "We know what a sore tooth is, so do not hesitate to reach <br> us via the phone or to make an appointment online! We <br> know what a sore."
+content: "Have a roof leak, storm damage, or an aging roof system? <br> Call our team today or schedule an inspection online. We <br> will provide clear recommendations and honest pricing."
 image: "images/cta.png"
 buttons:
   - enable: true
