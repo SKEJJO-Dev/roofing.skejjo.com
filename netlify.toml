@@ -3,7 +3,7 @@
   command = "npm install && hugo"
 
 [build.environment]
-  HUGO_VERSION = "0.145.0"
+  HUGO_VERSION = "0.147.2"
   NODE_VERSION = "20"
 
 [dev]
