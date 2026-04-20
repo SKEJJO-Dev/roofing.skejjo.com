@@ -1,0 +1,15 @@
+{
+  "name": "roofing-skejjo",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "hugo"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.13",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.18"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13"
+  }
+}
