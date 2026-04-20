@@ -1,9 +1,10 @@
 [build]
   publish = "public"
-  command = "hugo"
+  command = "npm install --prefix themes/cleaner-hugo && hugo"
 
 [build.environment]
   HUGO_VERSION = "0.145.0"
+  NODE_VERSION = "20"
 
 [dev]
   command = "hugo server -D"
