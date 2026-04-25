@@ -1,0 +1,35 @@
+/* CTA button overrides — new color palette */
+.btn-primary {
+  @apply bg-accent text-white;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white hover:bg-transparent! hover:text-secondary hover:border-secondary border border-transparent transition-colors! duration-10;
+}
+
+.btn-light {
+  @apply bg-transparent text-text-light border border-text-light! hover:text-text hover:bg-body! transition-colors! duration-10;
+}
+
+/* Hero background-position: 75% on mobile, center on lg+ */
+@media (min-width: 1024px) {
+  [data-hero-bg] {
+    background-position: center !important;
+  }
+}
+/* Header nav — white text so it's readable over the hero overlay */
+.header .nav-link {
+  @apply text-white hover:text-accent;
+
+  &.active {
+    @apply text-accent;
+  }
+}
+
+.header .navbar-brand {
+  @apply text-white;
+}
+
+.header .nav-dropdown-link {
+  @apply text-text hover:text-primary;
+}

@@ -1,11 +1,12 @@
 ---
 hero:
+  trade: "roofing"
   title: "Professional **Roofing** <br> Services in Auburn."
   subtitle: "TRUSTED RESIDENTIAL & COMMERCIAL ROOFING COMPANY"
   buttons:
     - enable: true
-      label: "Call: +1-394-495-5993"
-      link: "tel:+1-394-495-5993"
+      label: "Call: (394) 495-5993"
+      link: "tel:3944955993"
       icon: "fa-phone"
     - enable: true
       label: "Make An Appointment"
@@ -31,8 +32,8 @@ about:
       time: 9 AM – 20 PM
   button:
     enable: true
-    label: "Call: +1-394-495-5993"
-    link: "tel:+1-394-495-5993"
+    label: "Call: (394) 495-5993"
+    link: "tel:3944955993"
   badge: "images/home/about/badge.svg"
   images:
     - "images/home/about/1.png"

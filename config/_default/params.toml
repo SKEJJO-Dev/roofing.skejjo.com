@@ -2,15 +2,15 @@
 # favicon module: https://github.com/gethugothemes/hugo-modules/tree/master/images#favicon-implementation
 favicon = "images/favicon.png"
 # logo module: https://github.com/gethugothemes/hugo-modules/tree/master/images#logo-implementation
-logo = "images/logo-dark.svg"
+logo = ""
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_width is not work with .svg file
-logo_width = "142px"
-logo_height = "36px"
+logo_width = ""
+logo_height = ""
 # if logo_webp set false, will not generate WEBP version of logo | default is true
-logo_webp = true
-# logo text will only show when logo is missing.
-logo_text = "SKEJJO Roofing"
+logo_webp = false
+# logo text rendered as the site logo (no image).
+logo_text = "SKEJJO"
 # theme-mode
 theme_switcher = false
 theme_default = "system" # available options [light/dark/system]
@@ -26,7 +26,7 @@ custom_script = ""
 # copyright
 copyright = "[Gethugothemes](https://gethugothemes.com/) © 2025 All Rights Reserved"
 # footer logo
-footer_logo = "images/logo.svg"
+footer_logo = ""
 # footer description
 footer_description = "Professional roofing services with reliable workmanship and long-term protection."
 
@@ -34,8 +34,8 @@ footer_description = "Professional roofing services with reliable workmanship an
 [notification]
 enable = true
 message = "Need quick roofing help?"
-link = "tel:+1-394-495-5993"
-label = "Call Us: +1 071 281 9795"
+link = "tel:3944955993"
+label = "Call Us: (394) 495-5993"
 icon = "fa-phone"
 
 # Preloader
@@ -46,7 +46,7 @@ preloader = "" # use jpg, png, svg or gif format.
 
 # Navigation button
 [navigation_button]
-enable = true
+enable = false
 label = "Make An Appointment"
 link = "appointment/"
 

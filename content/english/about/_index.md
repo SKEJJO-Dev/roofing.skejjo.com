@@ -9,8 +9,8 @@ why_us:
     content: "We provide complete roofing services, from inspections and minor repairs to full roof replacements. Our team uses proven systems and premium materials to deliver long-lasting results."
     button:
       enable: true
-      label: "Call: +1-394-495-5993"
-      link: "tel:+1-394-495-5993"
+      label: "Call: (394) 495-5993"
+      link: "tel:3944955993"
 
     image: "images/about/1.png"
     overlay_image: "images/about/overlay.png"

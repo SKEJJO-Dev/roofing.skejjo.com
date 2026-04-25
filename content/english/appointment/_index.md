@@ -6,7 +6,7 @@ description: "this is meta description"
 contact_way:
   - name: "Phone Number"
     icon: "fa-solid fa-phone" #icon is from https://fontawesome.com/
-    value: "+1 840 841 25 69"
+    value: "(394) 495-5993"
   - name: "Location"
     icon: "fa-solid fa-location-dot" #icon is from https://fontawesome.com/
     value: "785 15h Street, Office 478 <br> New York, USA 70004"

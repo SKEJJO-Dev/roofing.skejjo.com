@@ -10,10 +10,8 @@
     <!-- head (don't cache it) -->
     {{ partial "essentials/head.html" . }}
 
-
     <!-- style (always cache it) -->
     {{ partialCached "essentials/style.html" . }}
-
   </head>
 
   <body>
@@ -25,15 +23,12 @@
       {{ partial "preloader.html" . }}
     {{ end }}
 
-
     <!-- announcement -->
     {{ partialCached "announcement.html" . }}
-
 
     <!-- header (don't cache it) -->
     {{ partial "essentials/header.html" . }}
     {{ partial "search-modal.html" (dict "Context" . ) }}
-
 
     <main>
       {{ block "main" . }}{{ end }}
@@ -42,6 +37,29 @@
     <!-- footer -->
     {{ partial "essentials/footer.html" . }}
 
+    <!-- Sticky bottom call bar (mobile-first, appears after scroll) -->
+    {{ if site.Params.notification.enable }}
+    <div id="sticky-call-bar" class="fixed bottom-0 left-0 w-full z-[100] bg-accent sm:hidden shadow-lg hidden">
+      <a
+        href="{{ site.Params.notification.link | safeURL }}"
+        class="flex items-center justify-center gap-3 py-4 text-white font-bold text-base tracking-wide">
+        <i class="fa-solid fa-phone animate-pulse"></i>
+        Call Now &mdash; {{ site.Params.notification.label | replaceRE `^Call Us: ` "" }}
+      </a>
+    </div>
+    <script>
+      (function() {
+        var bar = document.getElementById('sticky-call-bar');
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 200) {
+            bar.classList.remove('hidden');
+          } else {
+            bar.classList.add('hidden');
+          }
+        }, { passive: true });
+      })();
+    </script>
+    {{ end }}
 
     <!-- script (always cache it) -->
     {{ partialCached "essentials/script.html" . }}

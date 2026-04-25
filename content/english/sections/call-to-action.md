@@ -6,8 +6,8 @@ content: "Have a roof leak, storm damage, or an aging roof system? <br> Call our
 image: "images/cta.png"
 buttons:
   - enable: true
-    label: "Call: +1-394-495-5993"
-    link: "tel:+1-394-495-5993"
+    label: "Call: (394) 495-5993"
+    link: "tel:3944955993"
 
   - enable: true
     label: "Make An Appointment"
