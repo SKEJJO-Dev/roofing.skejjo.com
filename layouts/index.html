@@ -1,0 +1,357 @@
+{{ define "main" }}
+  <!-- Hero Section -->
+  {{ with .Params.hero }}
+    {{/* If a trade is specified, use the matching trade hero image */}}
+    {{ $tradeImage := "" }}
+    {{ $validTrades := slice "electrical" "hvac" "landscaping" "plumbing" "roofing" }}
+    {{ if and .trade (in $validTrades (lower .trade)) }}
+      {{ $tradeImage = printf "images/home/%s.webp" (lower .trade) }}
+    {{ end }}
+    {{ $resolvedImage := cond (ne $tradeImage "") $tradeImage .image }}
+    {{ $imagePath := strings.TrimPrefix "/" $resolvedImage }}
+    {{ $bgImage := resources.Get $imagePath }}
+
+    <section
+      class="section relative mb-22 pt-[108px] sm:pt-[108px] lg:pt-[108px]"
+      style="background-image: url('{{ if $bgImage }}{{ $bgImage.RelPermalink }}{{ else }}{{ .image | absURL }}{{ end }}'); background-size: cover; background-position: 85% center;"
+      data-hero-bg>
+      <div
+        class="container pt-20 pb-[280px] lg:pb-[228px] relative z-20">
+        {{ if .subtitle }}
+          <p
+            class="text-lg mb-5 text-center lg:text-left text-white"
+            data-aos="fade-up-sm"
+            data-aos-delay="20">
+            {{ .subtitle | markdownify }}
+          </p>
+        {{ end }}
+
+
+        <h1 class="mb-9 h3 lg:text-[72px] xl:text-[80px] xl:tracking-[-3px] xl:leading-[88px] text-center lg:text-left text-balance text-white" data-aos="fade-up-sm" data-aos-delay="40">
+          {{ partial "components/decorated-heading" (dict
+            "text" .title
+            "svgColor" "text-accent"
+            )
+          }}
+        </h1>
+
+        {{ if .buttons }}
+          <div
+            class="flex flex-col md:flex-row justify-center lg:justify-start items-center gap-4"
+            data-aos="fade-up-sm"
+            data-aos-delay="60">
+            {{ range $index, $button := .buttons }}
+              {{ if $button.enable }}
+                {{ partial "components/custom-button" (dict
+                  "label" $button.label
+                  "link" ($button.link | absURL)
+                  "className" "w-fit"
+                  "data_aos" "zoom-in-sm"
+                  "data_aos_delay" (add 80 (mul $index 20))
+                  "icon" $button.icon
+                  "variant" (cond (eq (mod $index 2) 0) "secondary" "primary")
+                  "target" (cond (strings.HasPrefix $button.link `http`) "_blank" "")
+                  "rel" (cond (strings.HasPrefix $button.link `http`) "noopener" "")
+                  )
+                }}
+              {{ end }}
+            {{ end }}
+          </div>
+        {{ end }}
+
+        <!-- Trust cluster -->
+        <div class="mt-12 sm:mt-14 lg:mt-16">
+          <div class="inline-flex max-w-full flex-wrap justify-center lg:justify-start items-center gap-2 rounded-xl border border-white/25 bg-primary/45 px-3 py-3 sm:px-4 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
+          <!-- Google rating -->
+          <div class="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5">
+            <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.96 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              <path fill="none" d="M0 0h48v48H0z"/>
+            </svg>
+            <span class="text-white/90 text-sm font-medium">
+              <span class="text-yellow-400">★</span> 4.8 Rating — 40+ Local Reviews
+            </span>
+          </div>
+
+          <span class="hidden lg:block text-white/30 text-lg px-1">|</span>
+
+          <!-- Licensed & Insured -->
+          <div class="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5">
+            <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7l-9-5z" fill="currentColor" class="text-accent" style="fill:#FF7A00"/>
+              <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-white/90 text-sm font-medium">Licensed &amp; Insured</span>
+          </div>
+
+          <span class="hidden lg:block text-white/30 text-lg px-1">|</span>
+
+          <!-- Local & Family-Owned -->
+          <div class="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5">
+            <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M9 21V12h6v9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-white/90 text-sm font-medium">Local &amp; Family‑Owned</span>
+          </div>
+          </div>
+        </div>
+        <!-- /Trust cluster -->
+      </div>
+
+
+      <div
+        class="absolute -bottom-1 left-0 w-full lg:w-4/6 xl:w-1/2 min-h-[330px] md:min-h-[200px] bg-body z-20"></div>
+      <div
+        class="absolute inset-0 w-full h-full z-10 bg-gradient-to-b lg:bg-gradient-to-r from-primary/92 via-secondary/70 to-primary/20"
+        data-aos="fade-right-sm"></div>
+    </section>
+  {{ end }}
+  <!-- /Hero Section -->
+
+  <!-- Services Section -->
+  <section class="section pt-0">
+    {{ with site.GetPage "services" }}
+      {{ partial "components/services" (dict "serviceIndex" .Params "allServices" (where site.RegularPages "Type" "services") "hero" false ) }}
+    {{ end }}
+  </section>
+  <!-- /Services Section -->
+
+  <!-- About Section -->
+  {{ with .Params.about }}
+    <section class="section pt-0 lg:pb-44">
+      <div class="container">
+        <div
+          class="flex flex-col lg:flex-row justify-between gap-32 lg:gap-10 items-center">
+          <div class="lg:w-[55%]">
+            <div class="relative">
+              {{ if .images }}
+                {{ if index .images 0 }}
+                  <div data-aos="zoom-in-sm">
+                    {{ partial "image" (dict
+                      "Src" (index .images 0)
+                      "Alt" "about images"
+                      "Class" "rounded top-0 xl:-top-12 w-[80%]"
+                      )
+                    }}
+                  </div>
+                {{ end }}
+                {{ if index .images 1 }}
+                  <div data-aos="zoom-in-sm" data_aos_delay="20">
+                    {{ partial "image" (dict
+                      "Src" (index .images 1)
+                      "Alt" "about images"
+                      "Class" "absolute rounded right-0 -bottom-20 w-[60%]"
+                      )
+                    }}
+                  </div>
+                {{ end }}
+              {{ end }}
+              {{ if .badge }}
+                <div data-aos="zoom-in-sm" data-aos-delay="40">
+                  {{ partial "image" (dict
+                    "Src" .badge
+                    "Alt" "badge"
+                    "Class" "hidden md:block absolute right-0 top-1/2 translate-y-[-140%] translate-x-[40%] spin-animation scale-80 w-[30%]")
+                  }}
+                </div>
+              {{ end }}
+            </div>
+          </div>
+          <div class="lg:w-[33%]">
+            {{ if .subtitle }}
+              <p
+                class="mb-7 text-base-sm text-primary text-center lg:text-left"
+                data-aos="fade-up-sm">
+                {{ .subtitle | markdownify }}
+              </p>
+            {{ end }}
+
+            {{ if .title }}
+              <h2
+                class="text-h3 md:text-h2 text-balance mb-7 text-center lg:text-left"
+                data-aos="fade-up-sm"
+                data-aos-delay="50">
+                {{ partial "components/decorated-heading" (dict
+                  "text" .title
+                  "svgColor" "text-accent"
+                  )
+                }}
+              </h2>
+            {{ end }}
+
+            {{ if .content }}
+              <p
+                class="mb-8 text-center lg:text-left"
+                data-aos="fade-up-sm"
+                data-aos-delay="100">
+                {{ .content | markdownify }}
+              </p>
+            {{ end }}
+
+            {{ if .schedule }}
+              {{ range $index, $schedule := .schedule }}
+                <p
+                  class="font-medium text-base text-center lg:text-left"
+                  data-aos="fade-up-sm"
+                  data-aos-delay="{{ add 100 (mul $index 50) }}">
+                  <span>{{ $schedule.day | markdownify }}</span>
+                  <span>{{ $schedule.time | markdownify }}</span>
+                </p>
+              {{ end }}
+            {{ end }}
+
+            {{ if .button.enable }}
+              <div
+                class="w-full flex justify-center lg:justify-start"
+                data-aos="fade-up-sm"
+                data-aos-delay="150">
+                {{ partial "components/custom-button" (dict
+                  "label" .button.label
+                  "link" (.button.link | absURL)
+                  "className" "mt-8 btn-sm! sm:btn!"
+                  "variant" "secondary"
+                  "icon" .button.icon
+                  )
+                }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /About Section -->
+
+  <!-- Responsibility Section -->
+  {{ with .Params.responsibility }}
+    <section class="section-sm pt-0 relative">
+      <div class="xl:absolute w-full max-xl:mb-14">
+        <div class="container 2xl:mt-10">
+          {{ if .subtitle }}
+            <p
+              class="mb-6 text-primary text-base-sm max-xl:text-center"
+              data-aos="fade-up-sm">
+              {{ .subtitle | markdownify }}
+            </p>
+          {{ end }}
+
+          {{ if .title }}
+            <h1  class="text-h3 md:text-h2-sm mb-7 max-xl:text-center" data-aos="fade-up-sm" data-aos-delay="20">
+              {{ partial "components/decorated-heading" (dict
+                "text" .title
+                "svgColor" "text-accent"
+                )
+              }}
+            </h1>
+          {{ end }}
+
+          {{ if .content }}
+            <p
+              class="mb-7 xl:pl-[208px] max-xl:text-center text-text/80"
+              data-aos="fade-up-sm"
+              data-aos-delay="40">
+              {{ .content | markdownify }}
+            </p>
+          {{ end }}
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between xl:items-baseline">
+        <div class="md:w-[60%]">
+          <div class="mt-auto flex flex-col xl:flex-row">
+            {{ if .image }}
+              <div
+                data-aos="fade-up-sm"
+                data-aos-delay="60"
+                class="xl:w-1/2 object-cover mt-auto">
+                {{ partial "image" (dict
+                  "Src" .image
+                  "Alt" "responsibility"
+                  "Width" 594
+                  "Height" 500
+                  "Class" "w-full"
+                  )
+                }}
+              </div>
+            {{ end }}
+            <div
+              class="bg-primary flex flex-col justify-center gap-9 p-8 xl:w-1/2">
+              {{ range $index, $job := .job }}
+                <div
+                  data-aos="fade-up-sm"
+                  data-aos-delay="{{ add 80 (mul $index 20) }}">
+                  <h6 class="text-text-light mb-2">
+                    {{ $job.title | markdownify }}
+                  </h6>
+                  <p class="text-base-sm text-text-light/80">
+                    {{ $job.content | markdownify }}
+                  </p>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ if .video }}
+          {{ partial "components/video-player" .video }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Responsibility Section -->
+
+  <!-- Customer Section -->
+  {{ with .Params.customer }}
+    <section class="section-sm pt-0">
+      <div class="container">
+        <div
+          class="flex flex-col lg:flex-row justify-center lg:justify-between lg:items-end gap-y-10 lg:gap-4">
+          <div class="text-center lg:text-left">
+            <h1 class="text-h1 text-primary" data-aos="fade-up-sm">
+              {{ .title.value | markdownify }}
+            </h1>
+            <p class="font-medium text-lg" data-aos="fade-up-sm">
+              {{ .title.text | markdownify }}
+            </p>
+          </div>
+
+          <div class="row justify-around max-md:g-3">
+            {{ range $index, $logo := .logo }}
+              <div class="col-6 sm:col">
+                {{ partial "image" (dict
+                  "Src" $logo
+                  "Alt" "logo"
+                  "Size" "168x41"
+                  "Class" "mx-auto"
+                  "DataAos" "fade-left-sm"
+                  "DataAosDelay" (mul $index 50)
+                  )
+                }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Customer Section -->
+
+  <hr class="border-t border-border" data-aos="fade-up-sm" />
+  <!-- Testimonial -->
+  {{ with .Params.testimonial }}
+    {{ partial "components/testimonial.html" . }}
+  {{ end }}
+  <!-- /Testimonial -->
+
+  <!-- Blog Section -->
+  {{ if .Params.blog.enable }}
+    {{ partial "blog-section.html" . }}
+  {{ end }}
+  <!-- /Blog Section -->
+
+  <!-- Call to action -->
+  {{ partial "call-to-action.html" . }}
+  <!-- /Call to action -->
+{{ end }}
